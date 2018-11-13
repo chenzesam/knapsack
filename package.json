@@ -10,10 +10,15 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel start watch",
-    "start": "serve example"
+    "start": "serve example",
+    "test": "jest"
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
     "npm-run-all": "^4.1.3",
     "rollup": "^0.67.0",

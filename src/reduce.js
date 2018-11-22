@@ -13,4 +13,16 @@ const reduce = (arr, fn, init) => {
   return acc
 }
 
-export default reduce
+const reduceRight = (arr, fn, init) => {
+  let acc = init === undefined ? arr[arr.length - 1] : init
+  let initIndex = init === undefined ? arr.length - 2 : arr.length - 1
+
+  for (let i = initIndex; i >= 0; i--) {
+    const cur = arr[i];
+    acc = fn(acc, cur, i, arr)
+  }
+
+  return acc
+}
+
+export { reduce, reduceRight }

@@ -28,3 +28,5 @@ const addEvent = (dom, selector, type, fn) => {
     dom.addEventListener(type, fn)
   }
 }
+
+export default addEvent

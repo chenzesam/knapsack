@@ -16,7 +16,7 @@ const shallowClone = (source) => {
 
   for (const key in source) {
     if (source.hasOwnProperty(key)) {
-      result[key] = source[key];
+      result[key] = source[key]
     }
   }
   return result
@@ -33,7 +33,7 @@ const deepClone = (source) => {
 
   for (const key in source) {
     if (source.hasOwnProperty(key)) {
-      const value = source[key];
+      const value = source[key]
       if (isObject(value)) {
         result[key] = deepClone(value)
       } else if (isArray(value)) {
@@ -46,7 +46,7 @@ const deepClone = (source) => {
           } else {
             result[key][i] = v
           }
-        });
+        })
       } else {
         result[key] = value
       }
@@ -58,7 +58,7 @@ const deepClone = (source) => {
  * 非递归版深克隆
  * @param {any} 复制源
  */
-const nonRecursiveDeepClone = (source) => {
+const advancedDeepClone = (source) => {
   let root = {}
 
   let stack = [
@@ -85,16 +85,16 @@ const nonRecursiveDeepClone = (source) => {
       res = parent[key] = {}
     }
 
-    for(let k in data) {
+    for (let k in data) {
       if (data.hasOwnProperty(k)) {
         if (typeof data[k] === 'object') {
           stack.push({
             parent: res,
             key: k,
-            data: data[k],
-          });
+            data: data[k]
+          })
         } else {
-          res[k] = data[k];
+          res[k] = data[k]
         }
       }
     }
@@ -104,5 +104,5 @@ const nonRecursiveDeepClone = (source) => {
 export {
   shallowClone,
   deepClone,
-  nonRecursiveDeepClone
+  advancedDeepClone
 }

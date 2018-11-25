@@ -1,23 +1,23 @@
 class Idle {
-  constructor(callback) {
+  constructor (callback) {
     this._callback = callback
     this._value = null
-    this._idleHandle = requestIdleCallback(() => {
+    this._idleHandle = window.requestIdleCallback(() => {
       this._value = this._callback()
     })
   }
 
-  getValue() {
+  getValue () {
     if (this._value === null) {
-      cancelIdleCallback(this._idleHandle)
+      window.cancelIdleCallback(this._idleHandle)
       this._value = this._callback()
     }
     return this._value
   }
 
-  get value() {
+  get value () {
     if (this._value === null) {
-      cancelIdleCallback(this._idleHandle)
+      window.cancelIdleCallback(this._idleHandle)
       this._value = this._callback()
     }
     return this._value

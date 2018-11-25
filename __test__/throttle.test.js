@@ -3,7 +3,6 @@ import throttle from '../src/throttle'
 jest.useFakeTimers()
 
 describe('throttle', () => {
-
   it('throttle not immediate', () => {
     const callback = jest.fn()
     const throttled = throttle(callback, 2000)
@@ -15,9 +14,7 @@ describe('throttle', () => {
     jest.runAllTimers()
 
     expect(callback).toBeCalled()
-
   })
-
 
   it('throttle with immediate', () => {
     const callback = jest.fn()
@@ -42,8 +39,5 @@ describe('throttle', () => {
     jest.advanceTimersByTime(2000)
 
     expect(callback).toHaveBeenCalledTimes(3)
-
   })
-
-
 })

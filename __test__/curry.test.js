@@ -2,7 +2,7 @@ import { curry } from '../src/curry'
 
 describe('curry', () => {
   it('common curry', () => {
-    function add(a, b) {
+    function add (a, b) {
       return a + b
     }
 

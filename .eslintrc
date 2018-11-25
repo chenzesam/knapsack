@@ -1,0 +1,12 @@
+{
+  "extends": "standard",
+  "rules": {
+    "no-proto": "off"
+  },
+  "globals": {
+    "it": true,
+    "describe": true,
+    "expect": true,
+    "jest": true
+  }
+}

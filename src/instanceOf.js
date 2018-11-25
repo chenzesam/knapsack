@@ -3,7 +3,7 @@ const instanceOf = (instance, object) => {
   let op = object.prototype
   let ip = instance.__proto__
 
-  while(ip) {
+  while (ip) {
     if (ip === op) {
       result = true
       break

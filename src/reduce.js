@@ -6,7 +6,7 @@ const reduce = (arr, fn, init) => {
   let initIndex = init === undefined ? 1 : 0
 
   for (let i = initIndex; i < arr.length; i++) {
-    const cur = arr[i];
+    const cur = arr[i]
     acc = fn(acc, cur, i, arr)
   }
 
@@ -18,7 +18,7 @@ const reduceRight = (arr, fn, init) => {
   let initIndex = init === undefined ? arr.length - 2 : arr.length - 1
 
   for (let i = initIndex; i >= 0; i--) {
-    const cur = arr[i];
+    const cur = arr[i]
     acc = fn(acc, cur, i, arr)
   }
 

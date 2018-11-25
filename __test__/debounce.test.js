@@ -3,7 +3,6 @@ import debounce from '../src/debounce'
 jest.useFakeTimers()
 
 describe('debounce', () => {
-
   it('debounce not immediate', () => {
     const callback = jest.fn()
     const debounced = debounce(callback, 2000)
@@ -42,5 +41,4 @@ describe('debounce', () => {
 
     expect(callback).toHaveBeenCalledTimes(2)
   })
-
 })

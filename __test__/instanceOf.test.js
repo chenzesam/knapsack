@@ -2,7 +2,7 @@ import instanceOf from '../src/instanceOf'
 
 describe('instanceof', () => {
   it('instanceof', () => {
-    function A() {}
+    function A () {}
     let a = new A()
 
     expect(instanceOf(a, A)).toBe(true)

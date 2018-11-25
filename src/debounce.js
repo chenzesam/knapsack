@@ -1,7 +1,6 @@
 // 防抖, 每次触发之后, 过 time(ms) 触发
 const debounce = (fn, time = 1000, immediate = false) => {
   let timer = null
-  let result = null
 
   return function () {
     if (immediate) {
@@ -25,7 +24,6 @@ const debounce = (fn, time = 1000, immediate = false) => {
       timer = null
       fn.apply(arguments)
     }, time)
-    return result = null
   }
 }
 

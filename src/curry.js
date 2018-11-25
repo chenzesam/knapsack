@@ -1,7 +1,7 @@
 const curry = (fn) => {
   let argLength = fn.length
   let args = []
-  return function executor() {
+  return function executor () {
     args.push(...arguments)
     if (args.length >= argLength) {
       let result = fn.apply(null, args)
@@ -15,7 +15,7 @@ const curry = (fn) => {
 
 const curryWithInfinityParams = (fn) => {
   let args = []
-  function executor() {
+  function executor () {
     args.push(...arguments)
     return executor
   }

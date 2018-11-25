@@ -1,7 +1,6 @@
 import { compose, composeReverse } from '../src/compose'
 
 describe('compose', function () {
-
   it('compose', () => {
     expect(compose([
       a => a + 3,
@@ -11,7 +10,7 @@ describe('compose', function () {
   })
 
   it('composeReverse', () => {
-    expect(compose([
+    expect(composeReverse([
       a => a + 3,
       a => a + 2,
       a => a + 1

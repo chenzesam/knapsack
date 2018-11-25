@@ -1,5 +1,3 @@
-import reduce from './reduce'
-
 const compose = (atoms) => {
   return atoms.reduce((prev, next) => (...args) => prev(next(...args)))
 }

@@ -1,9 +1,10 @@
-const newObj = (object, ...rest) => {
+const newObj = (Obj, ...rest) => {
   let obj = {}
-  let result = null
-  obj.__proto__ = object.prototype
-  result = object.apply(obj, rest)
-  return typeof result === 'object' ? result : obj
+
+  obj.__proto__ = Obj.prototype
+  Obj.apply(obj, rest)
+
+  return obj
 }
 
 export default newObj

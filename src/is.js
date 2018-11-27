@@ -1,9 +1,11 @@
 /**
- * 返回一个函数, 该函数接受一个变量, 判断是否等于 type
+ * @description 返回一个函数, 该函数接受一个变量, 判断是否等于 type
  * @param {String} type 要判断的类型, ex. 'Object'
  */
-const is = type => target => {
-  return Object.prototype.toString.call(target) === `[object ${type}]`
+function is (type) {
+  return function (target) {
+    return Object.prototype.toString.call(target) === `[object ${type}]`
+  }
 }
 
 // class Is {

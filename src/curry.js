@@ -1,4 +1,9 @@
-const curry = (fn) => {
+/**
+ * @description 柯里化
+ * @param {function} fn 需要柯里化的函数
+ * @returns {function}
+ */
+function curry (fn) {
   let argLength = fn.length
   let args = []
   return function executor () {
@@ -13,7 +18,7 @@ const curry = (fn) => {
   }
 }
 
-const curryWithInfinityParams = (fn) => {
+function curryWithInfinityParams (fn) {
   let args = []
   function executor () {
     args.push(...arguments)

@@ -1,8 +1,13 @@
-const includes = (arr, v) => {
+/**
+ * @description 判断数组是否包含某个值
+ * @param {any[]} arr
+ * @param {any} value
+ * @returns {boolean}
+ */
+function includes (arr, value) {
   let isIncludes = false
   for (let i = 0; i < arr.length; i++) {
-    const value = arr[i]
-    if (value === v) {
+    if (arr[i] === value) {
       isIncludes = true
       break
     }

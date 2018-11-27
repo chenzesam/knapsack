@@ -1,5 +1,5 @@
 /**
- *
+ * @description bind event
  * @param {DOM} dom 绑定事件的 DOM 节点
  * @param {String} selector 子选择器, 代理模式使用
  * @param {String} type 事件类型

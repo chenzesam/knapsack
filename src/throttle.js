@@ -1,4 +1,11 @@
-const throttle = (fn, time = 1000, immediate = false) => {
+/**
+ * @description 节流
+ * @param {function} fn 需要节流的函数
+ * @param {number} [time=1000] 节流事件, 默认 1s
+ * @param {boolean} [immediate=false] 是否立即触发
+ * @returns {function}
+ */
+function throttle (fn, time = 1000, immediate = false) {
   let timer = null
   return function () {
     if (immediate) {

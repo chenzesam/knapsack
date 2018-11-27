@@ -1,5 +1,11 @@
-// 防抖, 每次触发之后, 过 time(ms) 触发
-const debounce = (fn, time = 1000, immediate = false) => {
+/**
+ * @description 防抖
+ * @param {function} fn 防抖函数
+ * @param {number} [time=1000] 防抖事件
+ * @param {boolean} [immediate=false] 是否立即触发
+ * @returns {function}
+ */
+function debounce (fn, time = 1000, immediate = false) {
   let timer = null
 
   return function () {

@@ -1,16 +1,22 @@
-const instanceOf = (instance, object) => {
-  let result = false
-  let op = object.prototype
+/**
+ * @description instanceof 实现
+ * @param {object} instance 实例
+ * @param {class} Obj 类
+ * @returns {boolean}
+ */
+function instanceOf (instance, Obj) {
+  let isInstanceof = false
+  let op = Obj.prototype
   let ip = instance.__proto__
 
   while (ip) {
     if (ip === op) {
-      result = true
+      isInstanceof = true
       break
     }
     ip = ip.__proto__
   }
-  return result
+  return isInstanceof
 }
 
 export default instanceOf

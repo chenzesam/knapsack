@@ -4,10 +4,10 @@ const isObject = is('Object')
 const isArray = is('Array')
 
 /**
- * 浅克隆, 只克隆第一层, 会有很多问题, ex. 循环引用 / 引用绑定等
- * @param {any} source 复制源
+ * @description 浅克隆, 只克隆第一层, 会有很多问题, ex. 循环引用 / 引用绑定等
+ * @param {obj} source 复制源
  */
-const shallowClone = (source) => {
+function shallowClone (source) {
   let result = {}
 
   if (!isObject(source)) {
@@ -23,10 +23,10 @@ const shallowClone = (source) => {
 }
 
 /**
- * 递归版深克隆
- * @param {any} source 复制源
+ * @description 递归版深克隆
+ * @param {obj} source 复制源
  */
-const deepClone = (source) => {
+function deepClone (source) {
   let result = {}
 
   if (!isObject(source) && !isArray(source)) return source
@@ -55,10 +55,10 @@ const deepClone = (source) => {
 }
 
 /**
- * 非递归版深克隆
- * @param {any} 复制源
+ * @description 非递归版深克隆
+ * @param {obj} 复制源
  */
-const advancedDeepClone = (source) => {
+function advancedDeepClone (source) {
   let root = {}
 
   let stack = [

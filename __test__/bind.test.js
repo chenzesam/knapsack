@@ -1,13 +1,13 @@
-import bind from '../src/bind'
+import '../src/bind'
 
-describe('bind', function () {
+describe('bind.js', function () {
   it('bind', () => {
     function say (first, last) {
       return `${this.name} ${first} ${last}`
     }
-
-    const binded = bind(say, { name: 'test' }, 'first')
-
-    expect(binded('last')).toBe('test first last')
+    const obj = {
+      name: 'test'
+    }
+    expect(say.bindPolyfill(obj, 'first')('last')).toBe('test first last')
   })
 })

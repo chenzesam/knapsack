@@ -1,15 +1,12 @@
 /**
  * @description 通过字符串获取对象值
  * @param {object} obj
- * @param {string} str
+ * @param {string} path
  * @returns {any}
  */
-function get (obj, str) {
+function get (obj, path) {
   let reg = /\w+/g
-  str.match(reg).forEach(matchString => {
-    obj = obj[matchString]
-  })
-  return obj
+  return path.match(reg).reduce((val, subPath) => val[subPath], obj)
 }
 
 export default get

@@ -9,11 +9,7 @@ describe('apply.js', () => {
     name: 'test'
   }
 
-  it('es3', () => {
-    expect(test.applyPolyfillES3(obj, ['first', 'last'])).toBe('test first last')
-  })
-
-  it('es6', () => {
-    expect(test.applyPolyfillES6(obj, ['first', 'last'])).toBe('test first last')
+  it('common', () => {
+    expect(test.applyPolyfill(obj, ['first', 'last'])).toBe('test first last')
   })
 })

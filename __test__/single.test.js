@@ -1,7 +1,12 @@
-import Single from '../src/single'
+import singleInstance from '../src/single'
 
 describe('single.js', () => {
-  it('common test', () => {
-    expect(new Single()).toBe(new Single())
+  it('common', () => {
+    function Obj (name) {
+      this.name = name
+    }
+    const instance = singleInstance(Obj, 'test')
+    expect(instance()).toBe(instance())
+    expect(instance().name).toBe('test')
   })
 })

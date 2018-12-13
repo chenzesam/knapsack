@@ -1,15 +1,11 @@
-function Instance () {
-
-}
-
-const Single = (function () {
+const single = function (Single, ...args) {
   let instance = null
   return function () {
     if (!instance) {
-      instance = new Instance()
+      instance = new Single(...args)
     }
     return instance
   }
-})()
+}
 
-export default Single
+export default single

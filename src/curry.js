@@ -24,7 +24,7 @@ function curryWithInfinityParams (fn) {
     args.push(...arguments)
     return executor
   }
-  executor.valueOf = function () {
+  executor.toString = function () {
     let result = fn.apply(null, args)
     args = []
     return result

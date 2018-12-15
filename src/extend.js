@@ -1,11 +1,17 @@
-/**
- * @description 继承对象
- * @param {class} Child 子对象
- * @param {class} Parent 父对象
- */
-function extend (Child, Parent) {
-  Child.prototype = new Parent()
-  Child.prototype.constructor = Child
+function Parent (name) {
+  this.name = name
 }
 
-export default extend
+Parent.prototype.say = function () {
+  return this.name
+}
+
+function Child (name) {
+  Parent.call(this, name)
+}
+
+Child.prototype = new Parent()
+
+Child.prototype.constructor = Child
+
+export default Child

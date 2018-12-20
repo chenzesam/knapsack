@@ -52,6 +52,8 @@ function deepClone (source) {
       }
     }
   }
+
+  return result
 }
 
 /**

@@ -5,17 +5,13 @@
  * @returns {[]}
  */
 function findIndex (arr, fn) {
-  let findIndex = -1
-
   for (let i = 0; i < arr.length; i++) {
     const value = arr[i]
     if (fn(value, i, arr)) {
-      findIndex = i
-      break
+      return i
     }
   }
-
-  return findIndex
+  return -1
 }
 
 export default findIndex

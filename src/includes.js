@@ -5,14 +5,12 @@
  * @returns {boolean}
  */
 function includes (arr, value) {
-  let isIncludes = false
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === value) {
-      isIncludes = true
-      break
+      return true
     }
   }
-  return isIncludes
+  return false
 }
 
 export default includes

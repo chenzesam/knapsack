@@ -1,8 +1,8 @@
-const single = function (Single, ...args) {
+const single = function (Obj, ...args) {
   let instance = null
   return function () {
     if (!instance) {
-      instance = new Single(...args)
+      instance = new Obj(...args)
     }
     return instance
   }

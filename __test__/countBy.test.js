@@ -1,4 +1,4 @@
-import countBy from '../src/countBy'
+import countBy from '../src/utils/countBy'
 
 describe('countBy.js', () => {
   const arr = [1.1, 2.3, 4.4, 2.2]

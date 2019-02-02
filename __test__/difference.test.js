@@ -1,4 +1,4 @@
-import difference from '../src/difference'
+import difference from '../src/utils/difference'
 
 describe('difference', function () {
   const foo = [1, 2, 0, 4, 4]

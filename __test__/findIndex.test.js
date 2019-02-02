@@ -1,4 +1,4 @@
-import findIndex from '../src/findIndex'
+import findIndex from '../src/utils/findIndex'
 
 describe('findIndex', () => {
   it('findIndex', () => {

@@ -1,4 +1,4 @@
-import find from '../src/find'
+import find from '../src/utils/find'
 
 describe('find', function () {
   it('find', () => {

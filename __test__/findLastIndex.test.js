@@ -1,4 +1,4 @@
-import findLastIndex from '../src/findLastIndex'
+import findLastIndex from '../src/utils/findLastIndex'
 
 describe('findLastIndex.js', () => {
   const foo = [1, 2, 3, 4, 5, 2, 3]

@@ -1,4 +1,4 @@
-import { curry, curryWithInfinityParams } from '../src/curry'
+import { curry, curryWithInfinityParams } from '../src/utils/curry'
 
 describe('curry', () => {
   it('common curry', () => {

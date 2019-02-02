@@ -1,4 +1,4 @@
-import { trim, trimStart, trimEnd } from '../src/trim'
+import { trim, trimStart, trimEnd } from '../src/utils/trim'
 
 describe('trim', () => {
   it('trim start and end', () => {

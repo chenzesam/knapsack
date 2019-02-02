@@ -1,4 +1,4 @@
-import get from '../src/get'
+import get from '../src/utils/get'
 
 describe('get', () => {
   it('get', () => {

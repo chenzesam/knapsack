@@ -1,4 +1,4 @@
-import { flatten, recursiveFlatten } from '../src/flatten'
+import { flatten, recursiveFlatten } from '../src/utils/flatten'
 
 describe('flatten', function () {
   it('flatten', () => {

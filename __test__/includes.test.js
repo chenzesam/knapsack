@@ -1,4 +1,4 @@
-import includes from '../src/includes'
+import includes from '../src/utils/includes'
 
 describe('includes', function () {
   it('includes', () => {

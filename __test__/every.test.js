@@ -1,4 +1,4 @@
-import every from '../src/every'
+import every from '../src/utils/every'
 
 describe('every', function () {
   it('every', () => {

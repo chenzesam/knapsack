@@ -1,4 +1,4 @@
-import '../src/bind'
+import '../src/utils/bind'
 
 describe('bind.js', function () {
   it('bind', () => {

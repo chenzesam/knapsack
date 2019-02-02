@@ -1,4 +1,4 @@
-import paramsify from '../src/paramsify'
+import paramsify from '../src/utils/paramsify'
 
 describe('paramsify', function () {
   it('common test', () => {

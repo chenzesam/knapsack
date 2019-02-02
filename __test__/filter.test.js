@@ -1,4 +1,4 @@
-import filter from '../src/filter'
+import filter from '../src/utils/filter'
 
 describe('filter', () => {
   it('filter', () => {

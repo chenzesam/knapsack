@@ -1,5 +1,5 @@
-import newObj from '../src/newObj'
-import instanceOf from '../src/instanceOf'
+import newObj from '../src/utils/newObj'
+import instanceOf from '../src/utils/instanceOf'
 
 describe('newObj.js', () => {
   it('newObj', () => {

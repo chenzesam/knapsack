@@ -1,4 +1,4 @@
-import { compose, composeReverse } from '../src/compose'
+import { compose, composeReverse } from '../src/utils/compose'
 
 describe('compose', function () {
   it('compose', () => {

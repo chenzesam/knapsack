@@ -1,4 +1,4 @@
-import { reduce, reduceRight } from '../src/reduce'
+import { reduce, reduceRight } from '../src/utils/reduce'
 
 describe('reduce', () => {
   it('reduce', () => {

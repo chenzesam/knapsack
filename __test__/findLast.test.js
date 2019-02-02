@@ -1,4 +1,4 @@
-import findLast from '../src/findLast'
+import findLast from '../src/utils/findLast'
 
 describe('findLast.js', function () {
   const foo = [

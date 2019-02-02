@@ -1,4 +1,4 @@
-import any from '../src/any'
+import any from '../src/utils/any'
 
 describe('any', function () {
   it('common', () => {

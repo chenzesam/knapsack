@@ -1,4 +1,4 @@
-import '../src/assign'
+import '../src/utils/assign'
 
 describe('assign', function () {
   it('common', () => {

@@ -1,4 +1,4 @@
-import chunk from '../src/chunk'
+import chunk from '../src/utils/chunk'
 
 describe('chunk', function () {
   it('common', () => {

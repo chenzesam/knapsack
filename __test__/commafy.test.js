@@ -1,4 +1,4 @@
-import commafy from '../src/commafy'
+import commafy from '../src/utils/commafy'
 
 describe('commafy', () => {
   it('commafy', () => {

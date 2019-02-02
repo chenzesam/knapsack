@@ -1,4 +1,4 @@
-import is from '../src/is'
+import is from '../src/utils/is'
 
 describe('is.js', () => {
   it('测试 is(\'Object\'', () => {

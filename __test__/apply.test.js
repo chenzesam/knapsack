@@ -1,4 +1,4 @@
-import '../src/apply'
+import '../src/utils/apply'
 
 describe('apply.js', () => {
   function test (first, last) {

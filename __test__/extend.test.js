@@ -1,4 +1,4 @@
-import Child from '../src/extend'
+import Child from '../src/utils/extend'
 
 describe('extend', () => {
   let child = new Child('test')

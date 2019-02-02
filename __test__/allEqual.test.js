@@ -1,4 +1,4 @@
-import allEqual from '../src/allEqual'
+import allEqual from '../src/utils/allEqual'
 
 describe('allEqual', function () {
   it('common', () => {

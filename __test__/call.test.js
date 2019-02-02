@@ -1,4 +1,4 @@
-import '../src/call'
+import '../src/utils/call'
 
 describe('call.js', () => {
   function test (first, last) {

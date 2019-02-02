@@ -1,4 +1,4 @@
-import some from '../src/some'
+import some from '../src/utils/some'
 
 describe('some', () => {
   it('some', () => {

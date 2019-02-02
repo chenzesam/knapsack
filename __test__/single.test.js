@@ -1,4 +1,4 @@
-import singleInstance from '../src/single'
+import singleInstance from '../src/utils/single'
 
 describe('single.js', () => {
   it('common', () => {

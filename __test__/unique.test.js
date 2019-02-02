@@ -1,4 +1,4 @@
-import unique from '../src/unique'
+import unique from '../src/utils/unique'
 
 describe('unique', () => {
   it('unique', () => {

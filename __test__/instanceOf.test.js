@@ -1,4 +1,4 @@
-import instanceOf from '../src/instanceOf'
+import instanceOf from '../src/utils/instanceOf'
 
 describe('instanceof', () => {
   it('instanceof', () => {

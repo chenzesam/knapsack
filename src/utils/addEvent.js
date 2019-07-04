@@ -15,9 +15,9 @@ const addEvent = (dom, selector, type, fn) => {
 
   // 当是代理模式时
   if (selector) {
+    let childrenNodes = dom.querySelectorAll(selector)
     dom.addEventListener(type, (e) => {
       let target = e.target
-      let childrenNodes = dom.querySelectorAll(selector)
       childrenNodes.forEach(childrenNode => {
         if (childrenNode === target) {
           fn(e)

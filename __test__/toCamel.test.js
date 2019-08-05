@@ -1,4 +1,4 @@
-import toCamel from '../src/utils/toCaml'
+import toCamel from '../src/utils/toCamel'
 
 describe('toCamel', function () {
   it('common test', () => {

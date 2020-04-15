@@ -1,4 +1,4 @@
-import Stack from '../data-structures/Stack'
+import Stack from '../data-structures/stack'
 
 /**
  * @description 十进制转其他进制

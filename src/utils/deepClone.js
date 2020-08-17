@@ -39,13 +39,7 @@ function deepClone (source) {
       } else if (isArray(value)) {
         result[key] = []
         value.forEach((v, i) => {
-          if (isObject(v)) {
-            result[key][i] = deepClone(v)
-          } else if (isArray(v)) {
-            result[key][i] = deepClone(v)
-          } else {
-            result[key][i] = v
-          }
+          result[key][i] = deepClone(v)
         })
       } else {
         result[key] = value

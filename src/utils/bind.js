@@ -10,7 +10,7 @@ Function.prototype.bindPolyfill = function (ctx, ...rest) {
   function Obj () {}
 
   function Bound (...innerRest) {
-    // 如果使用了 new Fn.bind(ctx) 那么 this 的原型是 Bound, 这时候的上下文应该交回去, 否则使用传入的上下文
+    // 如果使用了 new (Fn.bind(ctx)) 那么 this 的原型是 Bound, 这时候的上下文应该交回去, 否则使用传入的上下文
     return _this.apply(this instanceof Bound ? this : ctx, [...rest, ...innerRest])
   }
 

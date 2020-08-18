@@ -7,13 +7,16 @@
  */
 function throttle (fn, time = 1000, immediate = false) {
   let timer = null
+  let args = null
   return function () {
     if (immediate) {
       immediate = false
       fn.apply(null, arguments)
       return
     }
-
+    
+    args = arguments
+    
     if (timer) {
       return
     }
@@ -21,7 +24,7 @@ function throttle (fn, time = 1000, immediate = false) {
     timer = setTimeout(() => {
       clearTimeout(timer)
       timer = null
-      fn.apply(null, arguments)
+      fn.apply(null, args)
     }, time)
   }
 }

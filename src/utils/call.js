@@ -8,8 +8,8 @@ Function.prototype.callPolyfill = function (ctx) {
   // 给上下文赋值新的调用函数
   context[fn] = this
 
-  let args = [...arguments].slice(1)
-  let result = context[fn](...args)
+  const args = [...arguments].slice(1)
+  const result = context[fn](...args)
 
   delete context[fn]
 

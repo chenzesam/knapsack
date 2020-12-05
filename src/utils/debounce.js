@@ -12,6 +12,7 @@ function debounce (fn, time = 1000, immediate = false) {
     if (immediate) {
       immediate = false
       fn.apply(null, arguments)
+      return
     }
 
     if (timer) {

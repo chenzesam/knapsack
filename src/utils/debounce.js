@@ -11,7 +11,8 @@ function debounce (fn, time = 1000, immediate = false) {
   return function () {
     if (immediate) {
       immediate = false
-      fn.apply(arguments)
+      fn.apply(null, arguments)
+      return
     }
 
     if (timer) {
@@ -20,7 +21,7 @@ function debounce (fn, time = 1000, immediate = false) {
       timer = setTimeout(() => {
         clearTimeout(timer)
         timer = null
-        fn.apply(arguments)
+        fn.apply(null, arguments)
       }, time)
       return
     }
@@ -28,7 +29,7 @@ function debounce (fn, time = 1000, immediate = false) {
     timer = setTimeout(() => {
       clearTimeout(timer)
       timer = null
-      fn.apply(arguments)
+      fn.apply(null, arguments)
     }, time)
   }
 }

@@ -39,13 +39,7 @@ function deepClone (source) {
       } else if (isArray(value)) {
         result[key] = []
         value.forEach((v, i) => {
-          if (isObject(v)) {
-            result[key][i] = deepClone(v)
-          } else if (isArray(v)) {
-            result[key][i] = deepClone(v)
-          } else {
-            result[key][i] = v
-          }
+          result[key][i] = deepClone(v)
         })
       } else {
         result[key] = value
@@ -74,13 +68,9 @@ function advancedDeepClone (source) {
   while (stack.length !== 0) {
     // 去除栈内最后一个值
     const node = stack.pop()
-
     const parent = node.parent
-
     const key = node.key
-
     const data = node.data
-
     let res = parent
 
     if (typeof key !== 'undefined') {
@@ -101,6 +91,7 @@ function advancedDeepClone (source) {
       }
     }
   }
+  return root
 }
 
 export {

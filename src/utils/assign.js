@@ -1,5 +1,5 @@
 Object.assignPolyfill = function (target, ...sources) {
-  if (target === null && target === undefined) {
+  if (target === null || target === undefined) {
     throw Error('target must be variable')
   }
   let to = Object(target)

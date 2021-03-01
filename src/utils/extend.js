@@ -10,7 +10,7 @@ function Child (name) {
   Parent.call(this, name)
 }
 
-Child.prototype = new Parent()
+Child.prototype = Object.create(Parent.prototype)
 
 Child.prototype.constructor = Child
 

@@ -1,45 +1,99 @@
-function limit(n, promisesFn) {
+let limit = (limitN, promises) => {
+  let isPause = false;
+  // 全部数量
+  let allN = promises.length - 1;
+  // 运行结束的数量，用于判断是否要返回结果了。
+  let overN = -1;
+  // 正在跑的数量，限制并发使用。
+  let activeN = 0;
+  // 当前跑了多少个，用于判断是否全部跑完了，不需要继续任务。
+  let startedN = 0;
   let res = [];
-  let fnN = promisesFn.length;
-  let isError = false;
-  let resolve = null;
-  let reject = null;
+  let resolve = () => {};
 
-  const defer = new Promise((r, rj) => {
-    resolve = r;
-    reject = rj;
-  });
-
-  const handlePromiseFn = (fn) => {
-    if (!fn) return;
+  const handlePromise = () => {
+    // 如果暂停了，就不执行了。
+    if (isPause) return;
+    if (activeN >= limitN) return;
+    if (startedN > allN) return;
+    const fn = promises[startedN];
+    const position = startedN;
+    startedN++;
+    activeN++;
     fn().then(val => {
-      res.push(val);
-    }).catch(error => {
-      isError = true;
-      reject(error);
-    }).finally(() => {
-      // 如果已经出错了，就不再执行了。
-      if (isError) return;
-      // 如果是最后一个结束的，那么就代表所有任务执行完毕。
-      fnN--;
-      if (fnN === 0) {
+      overN++;
+      activeN--;
+      res[position] = val;
+      if (overN === allN) {
         resolve(res);
-        return;
-      }
-
-      // 如果不是最后一个结束的，并且池子里面还有东西，那么就继续执行。例如：并发 4 个，第二个结束了就会来到这里，并出现没有东西了。
-      const promiseFn = promisesFn.shift();
-      if (promiseFn) {
-        handlePromiseFn(promiseFn);
-        return;
+      } else {
+        handlePromise();
       }
     })
   }
-  while (n--) {
-    handlePromiseFn(promisesFn.shift())
+
+  const start = () => {
+    isPause = false;
+    let resN = limitN - activeN;
+    while (resN-- && promises[startedN]) {
+      handlePromise();
+    }
   }
 
-  return defer;
+  const pause = () => {
+    isPause = true;
+  }
+
+  return {
+    push: newPs => {
+      promises.push(...newPs);
+      allN += newPs.length;
+      start();
+    }, 
+    pause,
+    start,
+    then: fn => resolve = fn
+  }
 }
 
-export default limit;
+/*
+let ps = [
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(1000)
+    }, 1000)
+  }),
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(5000)
+    }, 5000)
+  }),
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(3000)
+    }, 3000)
+  }),
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(2000)
+    }, 2000)
+  }),
+]
+
+let controller = limit(2, ps);
+controller.then(v => console.log(v));
+controller.start();
+
+controller.push([
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(1000)
+    }, 1000)
+  }),
+  () => new Promise(rs => {
+    setTimeout(() => {
+      rs(5000)
+    }, 5000)
+  }),
+])
+*/

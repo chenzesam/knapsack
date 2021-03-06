@@ -6,8 +6,8 @@
 function flatten (arr, level = Infinity) {
   if (level <= 0) return arr
   while (arr.some(v => Array.isArray(v))) {
-    if (level <= 0) return arr;
-    level--;
+    if (level <= 0) return arr
+    level--
     arr = [].concat(...arr)
   }
   return arr
@@ -36,11 +36,11 @@ function recursiveFlatten (arr, level = Infinity) {
  * @param {[]} arr
  * @returns {[]}
  */
-function flat(arr, level = Infinity) {
+function flat (arr, level = Infinity) {
   if (level <= 0) return arr
   return arr.reduce(function (prev, cur) {
-    return prev.concat((Array.isArray(cur) && needFlat) ? flat(cur, level - 1) : cur)
+    return prev.concat(Array.isArray(cur) ? flat(cur, level - 1) : cur)
   }, [])
 }
 
-export { flatten, recursiveFlatten }
+export { flatten, recursiveFlatten, flat }
